@@ -105,7 +105,7 @@ async function start() {
   $("today-date").textContent = new Intl.DateTimeFormat("en-IN", {
     day: "numeric", month: "long", year: "numeric"
   }).format(new Date());
-  $("date").value = new Date().toISOString().slice(0, 10);
+  $("date").value = new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
 
   try {
     const Module = await createSpendlyModule();
