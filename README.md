@@ -1,44 +1,77 @@
 # Spendly
 
-Spendly is a beginner-friendly, console-based personal finance tracker written primarily in C++. It is being developed as a CSE236 Object-Oriented Programming project and as the foundation for a personal expense-tracking application.
+**Spendly** is a personal expense tracker built as a CSE236 Object-Oriented Programming project. Its transaction logic is written in C++17 and compiled to WebAssembly for use by the browser interface.
 
-## Current C++ features
+## Website features
 
-- Add expenses with date, category, payment method, and description.
-- Add income with date, source, and description.
-- View recorded transactions.
-- Calculate total income, total expenses, and balance.
-- Delete a transaction by its ID.
-- Save records to a local text file and load them on the next run.
-- Validate positive numeric amounts and protect the text-file delimiter.
+- Add income and expenses with dates, categories or sources, payment methods and descriptions.
+- View the transaction list and filter by income or expenses.
+- See total income, total expenses and available balance.
+- Delete individual transactions.
+- Keep records in browser local storage on the current device.
+- Export a text backup of recorded transactions.
+- Responsive layout for desktop and mobile.
+- Privacy Policy and Terms and Conditions pages describing this student-project version.
 
-## C++ concepts demonstrated
+## C++ implementation
 
-- **Classes and objects:** `Transaction`, `Expense`, `Income`, and `ExpenseManager`.
-- **Inheritance:** `Expense` and `Income` derive from the abstract `Transaction` base class.
-- **File handling:** `ExpenseManager` reads and writes `spendly_data.txt` using file streams.
-- **Encapsulation:** transaction data is stored in class members and accessed through member functions.
+- `spendly.cpp`: standalone C++17 console application for the academic demonstration.
+- `web_core.cpp`: C++ transaction engine compiled to WebAssembly and called by the website.
+- `Transaction`, `Expense`, and `Income`: demonstrate classes, inheritance and polymorphic design in the console application.
+- `ExpenseManager`: demonstrates encapsulation, vectors, transaction operations, calculations and file handling.
+- The browser interface handles presentation and browser storage; transaction validation, record mutation and financial calculations run in the C++ WebAssembly module.
 
-## Requirements
+## Run the console application
 
-- A C++17-compatible compiler such as GCC, Clang, or MSVC.
-- CMake 3.10 or later (optional if compiling manually).
+Requirements: GCC/Clang/MSVC with C++17. CMake 3.10 or later is optional.
 
-## Build with CMake
+```bash
+g++ -std=c++17 -Wall -Wextra -pedantic spendly.cpp -o spendly
+./spendly
+```
 
-    cmake -S . -B build
-    cmake --build build
+Or use CMake:
 
-Run the generated `spendly` executable from the project directory. The data file is created in the current working directory when you choose **Save and exit**.
+```bash
+cmake -S . -B build
+cmake --build build
+```
 
-## Build manually with GCC
+The console application stores its records in `spendly_data.txt` in the working directory.
 
-    g++ -std=c++17 -Wall -Wextra -pedantic spendly.cpp -o spendly
+## Build and publish the website
 
-## Data storage
+The GitHub Actions workflow in `.github/workflows/deploy.yml` compiles `web_core.cpp` with Emscripten, assembles the static site and deploys it to GitHub Pages when changes are pushed to `main`.
 
-The application stores records in a local text file named `spendly_data.txt`. It uses a simple pipe-separated format intended for this learning project. Do not enter the `|` character in text fields.
+One-time repository setup:
 
-## Project status
+1. Open **Settings → Pages** in the GitHub repository.
+2. Under **Build and deployment**, select **GitHub Actions** as the source.
+3. Open the **Actions** tab and check the **Build and deploy Spendly** workflow.
+4. After a successful deployment, use the Pages URL shown in the workflow deployment summary.
 
-This is the first C++ backend milestone. A graphical/web frontend, transaction editing, date validation, budgets, reports, and additional safeguards are planned for later iterations. The project is not presented as a launched financial service. A public launch will not happen until the Privacy Policy and Terms and Conditions pages are implemented and reviewed.
+To preview locally, compile the WebAssembly module with Emscripten:
+
+```bash
+em++ web_core.cpp -std=c++17 -O2 --bind -s MODULARIZE=1 -s EXPORT_ES6=1 -s ENVIRONMENT=web -s ALLOW_MEMORY_GROWTH=1 -o spendly.js
+```
+
+Then serve the repository directory with a local HTTP server. Opening `index.html` directly as a `file://` URL will not load the WebAssembly module reliably.
+
+## Data and privacy notes
+
+The website stores transaction records in browser local storage. Data does not automatically sync between browsers or devices. Clearing browser storage can remove records; use **Export records** to keep a backup. Do not enter bank credentials, card security codes or passwords.
+
+The included Privacy Policy and Terms and Conditions are student-project drafts describing the current implementation. They are not legal advice or a substitute for legal review before any public commercial launch.
+
+## Current scope and limitations
+
+This is an academic project, not a bank, payment processor or financial advisory service. It does not connect to bank accounts. It currently provides manual record keeping, basic totals, filtering, deletion and backup export. Authentication, cloud synchronization, editing existing records, budgets and advanced reports are not implemented.
+
+## Project structure
+
+- `spendly.cpp` — standalone C++ console application
+- `web_core.cpp` — C++ WebAssembly transaction engine
+- `index.html`, `styles.css`, `app.js` — website interface
+- `privacy.html`, `terms.html` — policy and terms drafts
+- `.github/workflows/deploy.yml` — automated website build and deployment
