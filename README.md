@@ -33,7 +33,7 @@ Then open `http://localhost:8000`.
 To rebuild the WebAssembly module, install and activate the [Emscripten SDK](https://emscripten.org/docs/getting_started/downloads.html), then run this command from the project root:
 
 ```bash
-emcc src/spendly.cpp -O2 -s WASM=1 -s MODULARIZE=1 -s EXPORT_NAME=createSpendlyModule -s EXPORTED_FUNCTIONS='["_resetLedger","_addLedgerTransaction","_getLedgerIncome","_getLedgerExpenses","_getLedgerBalance","_getLedgerSavingsRate","_getLedgerCount","_calculateBudgetRemaining","_calculateGoalProgress","_validateAmount"]' -s EXPORTED_RUNTIME_METHODS='["cwrap"]' -o spendly.js
+em++ src/spendly.cpp -O2 -s WASM=1 -s MODULARIZE=1 -s EXPORT_NAME=createSpendlyModule -s EXPORTED_FUNCTIONS='["_resetLedger","_addLedgerTransaction","_getLedgerIncome","_getLedgerExpenses","_getLedgerBalance","_getLedgerSavingsRate","_getLedgerCount","_calculateBudgetRemaining","_calculateGoalProgress","_validateAmount"]' -s EXPORTED_RUNTIME_METHODS='["cwrap"]' -o spendly.js
 ```
 
 The deployment workflow runs this build automatically before publishing the site.
