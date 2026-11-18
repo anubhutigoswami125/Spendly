@@ -139,3 +139,108 @@ footer{font-size:12px}
  .page-heading h1{font-size:32px}
  .amount{font-size:25px}
 }
+
+
+/* POP ART VISUAL DIRECTION */
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{
+ --ink:#171717;--muted:#625c56;--line:#171717;--paper:#fff6d8;--white:#fffdf5;
+ --green:#f7d84a;--green-dark:#e9c52e;--shadow:5px 5px 0 #171717;
+}
+body{
+ background-color:#fff6d8;color:#171717;font-family:"Space Grotesk",sans-serif;
+ background-image:radial-gradient(#e8c94b 1.25px,transparent 1.25px);
+ background-size:18px 18px;
+}
+.sidebar{background:#2454d6;border-right:3px solid #171717;color:#fff}
+.brand{font-family:"Bowlby One SC",sans-serif;font-size:24px;letter-spacing:.2px;color:#fff}
+.brand-mark{background:#ff4b43;color:#171717;border:2px solid #171717;border-radius:4px;box-shadow:2px 2px 0 #171717}
+.workspace-label,.eyebrow{color:#ffe36b;font-weight:700;letter-spacing:1.5px}
+.nav-item{color:#fff;border:2px solid transparent;border-radius:4px;font-weight:700}
+.nav-item:hover{background:#1741b2;color:#fff;border-color:#171717}
+.nav-item.active{background:#ffe36b;color:#171717;border:2px solid #171717;box-shadow:3px 3px 0 #171717}
+.tip-card{background:#ff4b43;border:2px solid #171717;border-radius:5px;box-shadow:4px 4px 0 #171717}
+.tip-spark{color:#ffe36b}.tip-card strong{font-family:"Bowlby One SC",sans-serif;font-size:14px;color:#171717}
+.tip-card p{color:#241b18}
+.profile{border-color:#171717}.avatar{background:#ffe36b;color:#171717;border:2px solid #171717;border-radius:4px}
+.profile strong,.profile small,.profile-dots{color:#fff}
+.topbar{background:#ffe36b;border-bottom:3px solid #171717}
+.breadcrumb,.breadcrumb strong{color:#171717}.breadcrumb span{color:#625c56}
+.date-chip{color:#171717;font-weight:700}
+.icon-button,.mobile-menu{background:#fffdf5;border:2px solid #171717;border-radius:4px;color:#171717;box-shadow:2px 2px 0 #171717}
+.add-button{background:#ff4b43;color:#171717;border:2px solid #171717;border-radius:4px;font-weight:700;box-shadow:3px 3px 0 #171717}
+.add-button:hover{background:#ff7068;transform:translate(-1px,-1px);box-shadow:4px 4px 0 #171717}
+.reset-button{background:#fffdf5;color:#171717;border:2px solid #171717;border-radius:4px;box-shadow:2px 2px 0 #171717;font-weight:700}
+.reset-button:hover{background:#ff4b43;color:#171717}
+.page-heading h1{font:400 39px "Bowlby One SC",sans-serif;letter-spacing:.2px;color:#171717;text-shadow:2px 2px 0 #ffe36b}
+.subheading{color:#625c56;font-weight:600}
+.month-select{background:#fffdf5;border:2px solid #171717;border-radius:4px;color:#171717;box-shadow:3px 3px 0 #171717}
+.month-select strong{color:#171717}
+.summary-card,.panel,.quick-card,.page-panel{
+ background:#fffdf5;border:2px solid #171717;border-radius:5px;
+ box-shadow:var(--shadow);color:#171717;
+}
+.summary-card{transition:transform .15s ease,box-shadow .15s ease}
+.summary-card:hover,.panel:hover{box-shadow:7px 7px 0 #171717;transform:translate(-1px,-1px)}
+.balance-card{background:#ffe36b;border-color:#171717;color:#171717;position:relative}
+.balance-card:after{content:"";position:absolute;right:0;top:0;width:78px;height:78px;background-image:radial-gradient(#171717 1.5px,transparent 1.5px);background-size:9px 9px;opacity:.17;pointer-events:none}
+.balance-card .card-top,.balance-card .trend,.balance-card .card-note{color:#383026}
+.balance-card .amount{color:#171717}
+.balance-card .mini-icon{background:#fffdf5;color:#171717;border:1px solid #171717;border-radius:4px}
+.card-top{color:#625c56;font-weight:700}
+.amount{font-family:"Bowlby One SC",sans-serif;font-weight:400;letter-spacing:0;color:#171717}
+.mini-icon{border:1.5px solid #171717;border-radius:4px;background:#e5edff;color:#2454d6}
+.mini-icon.green{background:#e1f2d3;color:#287a4b}
+.mini-icon.coral{background:#ffe0dc;color:#b83e42}
+.mini-icon.blue{background:#dce7ff;color:#2454d6}
+.panel-heading h2{font:400 19px "Bowlby One SC",sans-serif;color:#171717;letter-spacing:.1px}
+.panel-heading p,.period-tag{color:#625c56}
+.period-tag{background:#ffe36b;border:1.5px solid #171717;border-radius:3px;font-weight:700}
+.donut{border:2px solid #171717}
+.donut:after{background:#fffdf5}
+.donut-center strong{font-family:"Bowlby One SC",sans-serif;color:#171717}
+.legend-item,.legend-item strong{color:#171717}
+.legend-dot{border:1px solid #171717}
+.empty-state{color:#625c56}
+.progress-track{background:#f0e7ca;border:1px solid #171717;border-radius:2px}
+.progress-fill{background:#2454d6;border:1px solid #171717;border-radius:1px}
+.progress-fill.warn{background:#f0bd32}.progress-fill.over{background:#ff4b43}
+.text-link{color:#2454d6;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.outline-button{background:#fffdf5;border:2px solid #171717;border-radius:4px;color:#171717;box-shadow:2px 2px 0 #171717;font-weight:700}
+.outline-button:hover{background:#ffe36b}
+th{color:#625c56;border-color:#d8cdb0}
+td{color:#514943;border-color:#e8dfc8}
+.transaction-name{color:#171717}
+.transaction-icon{background:#dce7ff;color:#2454d6;border:1.5px solid #171717;border-radius:4px}
+.amount-income{color:#287a4b!important;font-weight:700}
+.amount-expense{color:#b83e42!important;font-weight:700}
+.quick-card{color:#171717;border-radius:5px}
+.quick-card:hover{border-color:#171717;background:#ffe36b;transform:translate(-2px,-2px);box-shadow:7px 7px 0 #171717}
+.quick-symbol{border:1.5px solid #171717;border-radius:4px}
+.quick-symbol.mint{background:#e1f2d3;color:#287a4b}
+.quick-symbol.peach{background:#ffe0dc;color:#b83e42}
+.quick-symbol.sky{background:#dce7ff;color:#2454d6}
+.quick-card strong{color:#171717}
+.quick-card small{color:#625c56}
+footer{border-color:#171717;color:#625c56}
+footer span{color:#171717}
+.modal-backdrop{background:#171717b8;backdrop-filter:blur(3px)}
+.modal{background:#fffdf5;border:3px solid #171717;border-radius:6px;box-shadow:8px 8px 0 #171717;color:#171717}
+.modal-heading h2{font:400 24px "Bowlby One SC",sans-serif;color:#171717}
+.close-button{background:#ffe36b;border:2px solid #171717;border-radius:4px;color:#171717}
+.modal label,.simple-form label{color:#514943;font-weight:700}
+.modal input,.modal select,.simple-form input,.simple-form select{
+ border:2px solid #171717;border-radius:4px;background:#fff;color:#171717;
+}
+.modal input:focus,.modal select:focus{border-color:#2454d6;box-shadow:3px 3px 0 #2454d6}
+.simple-form button{background:#ff4b43;color:#171717;border:2px solid #171717;border-radius:4px;box-shadow:2px 2px 0 #171717;font-weight:700}
+.record-row{border-color:#e8dfc8;color:#171717}
+.record-row small{color:#625c56}
+.delete-record{background:#ffe0dc;border:1.5px solid #171717;border-radius:3px;color:#b83e42;font-weight:700}
+.toast{background:#171717;color:#ffe36b;border:2px solid #ffe36b;border-radius:4px;font-weight:700}
+@media(max-width:760px){
+ .sidebar{background:#2454d6;border-right:3px solid #171717}
+ .page-heading h1{font-size:31px}
+ .reset-button{font-size:11px;padding:8px 7px}
+ .summary-card:hover,.panel:hover{transform:none}
+}
