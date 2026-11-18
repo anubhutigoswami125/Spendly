@@ -88,3 +88,54 @@ footer span{color:#986477}
  .sidebar{background:#35101f;box-shadow:10px 0 30px #1e0712aa}
  .page-heading h1{font-size:31px}
 }
+
+
+/* Readability, money-flow colours and account reset control */
+body{font-size:16px}
+.nav-item{font-size:15px}
+.workspace-label,.eyebrow{font-size:12px}
+.tip-card p{font-size:13px}
+.profile strong{font-size:13px}.profile small{font-size:12px}
+.breadcrumb{font-size:14px}.date-chip{font-size:13px}
+.page-heading h1{font-size:38px}
+.subheading{font-size:15px}
+.month-select{font-size:13px}
+.card-top{font-size:14px}
+.amount{font-size:30px}
+.card-foot{font-size:12px}
+.card-note{font-size:12px}
+.panel-heading h2{font-size:18px}
+.panel-heading p{font-size:13px}
+.period-tag{font-size:12px}
+.donut-center strong{font-size:19px}
+.donut-center span{font-size:12px}
+.legend-item{font-size:12px}
+.empty-state{font-size:13px}
+.budget-meta{font-size:12px}
+.text-link{font-size:13px}
+.outline-button{font-size:13px}
+th{font-size:11px}
+td{font-size:13px}
+.quick-card strong{font-size:13px}
+.quick-card small{font-size:11px}
+footer{font-size:12px}
+.modal label{font-size:12px}
+.modal input,.modal select{font-size:14px}
+.simple-form label{font-size:12px}
+.simple-form input,.simple-form select,.simple-form button{font-size:13px}
+.record-row{font-size:13px}
+.delete-record{font-size:12px}
+.summary-card:nth-child(2) #incomeValue{color:#287a4b}
+.summary-card:nth-child(3) #expenseValue{color:#b83e42}
+.amount-income{color:#287a4b!important;font-weight:700}
+.amount-expense{color:#b83e42!important;font-weight:700}
+.mini-icon.green{color:#287a4b;background:#e3f2e7}
+.mini-icon.coral{color:#b83e42;background:#fbe6e5}
+.reset-button{border:1px solid #a85a63;background:transparent;color:#f6d7d5;padding:9px 12px;border-radius:8px;font-size:12px;font-weight:700}
+.reset-button:hover{background:#713347;color:#fff}
+@media(max-width:760px){
+ .top-actions{gap:6px}
+ .reset-button{font-size:11px;padding:8px 9px}
+ .page-heading h1{font-size:32px}
+ .amount{font-size:25px}
+}
