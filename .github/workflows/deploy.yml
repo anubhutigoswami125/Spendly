@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Set up Emscripten
         uses: mymindstorm/setup-emsdk@v14
+      - name: Validate frontend JavaScript
+        run: node --check app.js
       - name: Compile the C++ financial engine
         run: em++ src/spendly.cpp -O2 -s WASM=1 -s MODULARIZE=1 -s EXPORT_NAME=createSpendlyModule -s EXPORTED_FUNCTIONS='["_resetLedger","_addLedgerTransaction","_getLedgerIncome","_getLedgerExpenses","_getLedgerBalance","_getLedgerSavingsRate","_getLedgerCount","_calculateBudgetRemaining","_calculateGoalProgress","_validateAmount"]' -s EXPORTED_RUNTIME_METHODS='["cwrap"]' -o spendly.js
       - uses: actions/upload-pages-artifact@v3
